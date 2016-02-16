@@ -1,3 +1,24 @@
+## Notes to Evaluator:
+
+### Part 1: index.html
+Please use ngrok to index.html this at PageSpeed Insights.  Below are the changes I made to index.html:
+
+1. I commented out OpenSans font stylesheet and css code and traded it for Arial font
+2. I copied css code of style.css to index.html and commented out style.css stylesheet
+3. I added media attribute "print" to css/print.css
+4. I added async attribute to  Google Analytics script
+5. I exchanged the image profilepic for profilepic_opt
+6. I exchanged the image pizzeria for pizzeria_opt
+
+### Part 2: views/js/main.js
+Below are the changes I made to views/js/main.js and views/css/style.css:
+
+1. I commented out unnecessary function determineDx and modified function changePizzaSizes avoiding reusing document.querySelectorAll
+2. I modified function updatePositions by reading document.body.scrollTop to put phases into array then using those array values in a different for loop to place background pizzas
+3. I modified function in document.addEventListener by reducing amount of background pizzas from 200 to 25
+4. I added will-change: transform to class mover in views/css/style.css to avoid constant repaint of entire screen
+
+
 ## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
@@ -32,7 +53,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
